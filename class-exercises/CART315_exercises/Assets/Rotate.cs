@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
+    public float rotateSpeed = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        this.transform.Rotate(0.0f, 1.0f, 0.0f);
+        if (Input.GetButton("Fire1"))
+        {
+            this.transform.Rotate(0.0f, rotateSpeed, 0.0f);
+        }
     }
 }
