@@ -22,21 +22,21 @@ public class HealthBar : MonoBehaviour
         ratio.text = (r * 100).ToString("0") + '%';
     }
 
-    //public void TakeDamege(float damage)
-    //{
-    //    hitpoint -= damage;
-    //    if (hitpoint < 0)
-    //    {
-    //        hitpoint = 0;
-    //        Debug.Log("Dead!");
-    //    }
+    public void TakeDamage(float damage)
+    {
+        hitpoint -= damage;
+        if (hitpoint < 0)
+        {
+            hitpoint = 0;
+            Debug.Log("Dead!");
+        }
 
-    //    UpdateHealthBar();
-    //}
+        UpdateHealthBar();
+    }
 
     public void HealthDamage(float heal)
     {
-        hitpoint -= heal;
+        hitpoint += heal;
         if (hitpoint > maxHitpoint)
         {
             hitpoint = maxHitpoint;

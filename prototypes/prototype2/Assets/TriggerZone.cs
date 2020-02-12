@@ -11,7 +11,9 @@ public class TriggerZone : MonoBehaviour
     {
         if (col.tag == "Player")
         {
-            col.SendMessage((isDamaging) ? "TakeDamage" : "HealthDamage", Time.deltaTime * damage);
+            col.gameObject.GetComponent<HealthBar>().TakeDamage(damage * Time.deltaTime);
+
+            //col.SendMessage((isDamaging) ? "TakeDamage" : "HealthDamage", Time.deltaTime * damage);
         }
     }
 }
